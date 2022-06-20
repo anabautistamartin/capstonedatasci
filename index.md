@@ -1,4 +1,5 @@
-# Ana's Capstone Project
+# M0ISES
+Una página web para el proyecto M0ISES
 
 1. Origenes
 2. Problema 1
