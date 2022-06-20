@@ -1,3 +1,9 @@
+# Ana's Capstone Project
+
+1. Origenes
+2. Problema 1
+3. Problema 2
+
 ## Welcome to Ana's Capstone Project
 
 You can use the [editor on GitHub](https://github.com/anabautistamartin/capstonedatasci/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
