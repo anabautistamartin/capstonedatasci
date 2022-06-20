@@ -27,8 +27,6 @@ Los orígenes del Proyecto M0ISES se encuentran en uno de los estudios destinado
 
 En este estudio, 78 sujetos (53 mujeres) de edades entre 18 y 30 años (Mean=22,78; SD=) completaron una tarea online de lectura de oraciones sobre las que debían responder si eran correctas o incorrectas. 
 
-![image](https://user-images.githubusercontent.com/94480051/174655229-a6c09997-2e29-4bb9-9117-1d90ee6dbf98.png)
-
 
 
 7. Problema 2
