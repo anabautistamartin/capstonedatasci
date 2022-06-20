@@ -1,10 +1,38 @@
-# M0ISES
-Una página web para el proyecto M0ISES
+# PROYECTO M0ISES
+Una página web para el Proyecto M0ISES
 
-1. Origenes
-2. Problema 1
-3. Problema 2
-4. Problema 2
+En esta página encontrarás todo el contenido del Proyecto M0ISES!
+
+a. Los orígenes del proyecto
+b. Problema 1: Proficiency
+c. Problema 2: Correctness semántica
+
+Continúa leyendo para saber más...
+
+## Orígenes
+
+Antes que nada, lee la siguiente pregunta y piensa la respuesta antes de continuar leyendo:
+
+<img width="683" alt="image" src="https://user-images.githubusercontent.com/94480051/174650680-d3afb5c2-31f3-4ff7-805c-b1521a9a3024.png">
+
+Con algún conocimiento sobre la Biblia y la religión cristiana, habrás tardado poco en averiguar que Moisés llevó **2** animales de cada especie en su arca. Sin embargo, quizás no te habrás percatado de que no fue Moisés, sino Noé quien llevó esos animales en el arca. Si es así, enhorabuena, ¡has caido en la **ilusión de Moisés**!
+
+Este efecto de falsa congruencia semántica fue investigado por primera vez en el área de la psicolingüística en 1981 por Erickson y Mattsew (link). Durante las décadas posteriores se llevaron a cabo múltiples estudios para averiguar bajo qué condiciones se daba o no dicho efecto. Los modelos que trataron de explicar esta ilusión llegaron a la conclusión de que el procesamiento lingüístico es tan eficiente que nos lleva a asumir coherencia semántica en una pregunta o oración que cumple los mínimos de relación semántica (link). En casos como la pregunta anterior, los elementos de la oración están relacionados semánticamente ...
+
+Sin embargo, no ha sido hasta el año pasado que se ha estudiado por primera vez la ilusión de Moisés en las distintas lenguas de personas bilingües (Dehaene, link). Esto plantea una cuestión importante en el ámbito del procesamiento multilingüe ya que integra el concepto de **eficiencia semántica** en múltiples lenguas. El coste cognitivo que supone procesar en una lengua en la que somos menos competentes podría hacer que suceda en mayor medida la ilusión de Moisés, ya que se destinan menos recursos a comprobar la coherencia semántica, o bien hacer que suceda en menor medida la ilusión, ya que al añadir más esfuerzos para procesar, tambien es más probable detectar una incongruencia. Esta prematura línea de estudio aún no tiene la respuesta. 
+
+Los orígenes del Proyecto M0ISES se encuentran en uno de los estudios destinados a analizar la ilusión de Moisés, en este caso en personas bilingües de castellano y catalán. Esta investigación pertenece al Trabajo de Fin de Máster de la autora, Ana María Bautista Martín, desarrollado desde la Universidad de Barcelona y la Universidad Rovira i Virgili, con la colaboración de la Universidad de Minho (Portugal).
+
+# El estudio
+
+En este estudio, 78 sujetos (53 mujeres) de edades entre 18 y 30 años (Mean=22,78; SD=) completaron una tarea online de lectura de oraciones sobre las que debían responder si eran correctas o incorrectas. 
+
+![image](https://user-images.githubusercontent.com/94480051/174655229-a6c09997-2e29-4bb9-9117-1d90ee6dbf98.png)
+
+
+
+7. Problema 2
+7. Problema 2
 
 ## Welcome to Ana's Capstone Project
 
