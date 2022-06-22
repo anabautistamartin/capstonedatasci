@@ -1,9 +1,12 @@
 # PROYECTO M0ISES
 Una página web para el Proyecto M0ISES
 
+INTRODUCCION
+
 En esta página encontrarás todo el contenido del Proyecto M0ISES!
 
 a. Los orígenes del proyecto
+b. Los datos
 b. Problema 1: Proficiency
 c. Problema 2: Correctness semántica
 
@@ -23,14 +26,41 @@ Sin embargo, no ha sido hasta el año pasado que se ha estudiado por primera vez
 
 Los orígenes del Proyecto M0ISES se encuentran en uno de los estudios destinados a analizar la ilusión de Moisés, en este caso en personas bilingües de castellano y catalán. Esta investigación pertenece al Trabajo de Fin de Máster de la autora, Ana María Bautista Martín, desarrollado desde la Universidad de Barcelona y la Universidad Rovira i Virgili, con la colaboración de la Universidad de Minho (Portugal).
 
-# El estudio
+## El estudio
 
-En este estudio, 78 sujetos (53 mujeres) de edades entre 18 y 30 años (Mean=22,78; SD=) completaron una tarea online de lectura de oraciones sobre las que debían responder si eran correctas o incorrectas. 
+En este estudio, 78 sujetos (53 mujeres y 25 hombres) de edades comprendidas entre los 18 y 30 años (Mean=22,78; SD=...) completaron una tarea online de lectura de oraciones sobre las que debían responder si eran correctas o incorrectas. El procedimiento para los sujetos bilingües seguía el siguiente orden: consentían a participar en el experimento, recibían los ensayos de entrenamiento, contestaban a 73 oraciones en una de las dos lenguas (castellano o catalán), contestaban a otras 73 oraciones en la otra lengua (castellano o catalán) y finalmente completaban una serie de preguntas sociolingüísticas sobre cada lengua.
 
+Es importante destacar que estos sujetos bilingües de castellano y catalán fueron seleccionados precisamente por tener altos niveles de competencia en las dos lenguas. Además, la situación sociolingüística en territorios catalanoparlantes hace que estos bilingües sean normalmente altamente balanceados en ambas lenguas. 
 
+## Los datos
 
-7. Problema 2
-7. Problema 2
+Para este proyecto, se contó con los datos del estudio descrito anteriormente. Los datos se limpiaron de la siguiente forma:
+- Eliminación de ensayos en los que el sujeto no conocía la respuesta correcta a la oración. 
+- Eliminación de ensayos en los que el sujeto tenía la ilusión (respondía 'correcta' a una oración incorrecta). Estos ensayos podrían crear confusión para el modelo, ya que se trata de oraciones que se integran semánticamente como correctas pero en realidad son incorrectas. 
+- Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD). Estos ensayos son poco informativos ya que indican despiste o fatiga del sujeto al llevar a cabo el experimento. 
+
+De esta forma, se perdió aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el siguiente enlace:
+
+Cada ensayo contenía inicialmente las siguientes columnas:
+1. Versión de la oración: correcta o incorrecta, indicado con 1 y 0 respectivamente. 
+2. Número de ítem leído, de un listado de 146 ítems.
+3. Milisegundos de lectura de la oración, ponderados según la longitud de la oracion en número de caracteres. 
+4. Lengua en la que se lee la oración: castellano o catalan, indicado con 0 y 1 respectivamente. 
+5. Frecuencia de exposición a la lengua leída, indicado con valores del 0 al 1 por el propio sujeto. 
+6. Preferencia de lectura en la lengua leída (i.e., en qué porcentaje elegirían leer en la lengua del ensayo si pudiesen elegir cualquier lengua), indicado con valores del 0 al 1. 
+7. Uso de la lengua: promedio de respuestas a un inventario de uso de la lengua en distintas situaciones (ambientes familiares, profesionales, ocio, etc.), indicado con valores del 0 al 1.
+8. Nivel de competencia en la lengua: promedio de la autoestimación en nivel de competencia de la lengua en escritura, lectura, escucha y habla, indicado con valores del 0 al 1.
+9. Grupo: grupo al que pertenecía el sujeto, si es el monolingüe (control) o el bilingue, indicado con 0 y 1 respectivamente. 
+10. Orden: orden de los bloques en el experimento, si se realiza primero la tarea en castellano o en catalán, indicado con 0 y 1 respectivamente. 
+11. Contextlab1 y contextlab2: variables dicotómicas que indican, conjuntamente, la condición experimental a la que pertenece el ensayo.
+
+## Problema 1
+
+El primer problema que el Proyecto M0ISÉS trató de resolver fue el de encontrar un indicador objetivo y rápido del nivel de competencia de un individuo en una lengua. 
+
+En los estudios en psicolingüística, es extremadamente importante conocer el nivel que tienen los individuos en las lenguas que se pretenden analizar. Sin embargo, pocas veces se puede aplicar un test exhaustivo del nivel de competencia objetivo que se tiene en una lengua, ya que normalmente se trata de pruebas largas que interrumpen el curso de los experimentos y pueden crear fatiga al individuo. En consecuencia, usualmente se recurre a preguntar al sujeto cómo se valora a sí mismo en las destrezas de escritura, habla, lectura y escucha para una lengua. Esta medida es considerablemente menos costosa, pero incluye una gran dosis de subjetividad que en algunos casos es probable que distorsione las respuestas.
+
+Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está significativamente relacionado con la autoestimación de los sujetos en nivel de competencia (R=. Como se visualiza en la imagen inferior, 
 
 ## Welcome to Ana's Capstone Project
 
