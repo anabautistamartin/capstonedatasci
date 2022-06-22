@@ -58,7 +58,24 @@ El primer problema que el Proyecto M0ISÉS trató de resolver fue el de encontra
 
 En los estudios en psicolingüística, es extremadamente importante conocer el nivel que tienen los individuos en las lenguas que se pretenden analizar. Sin embargo, pocas veces se puede aplicar un test exhaustivo del nivel de competencia objetivo que se tiene en una lengua, ya que normalmente se trata de pruebas largas que interrumpen el curso de los experimentos y pueden crear fatiga al individuo. En consecuencia, usualmente se recurre a preguntar al sujeto cómo se valora a sí mismo en las destrezas de escritura, habla, lectura y escucha para una lengua. Esta medida es considerablemente menos costosa, pero incluye una gran dosis de subjetividad que en algunos casos es probable que distorsione las respuestas.
 
-Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está significativamente relacionado con la autoestimación de los sujetos en nivel de competencia (R=. Como se visualiza en la imagen inferior, 
+Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la autoestimación de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). Este conglomerado de variables que tienen una leve pero significativa relación con el nivel de competencia podrían servir para conseguir predecir esta última variable de una forma eficaz. 
+
+De esta forma, se creó una red neuronal profunda que consiguiese predecir el valor de nivel de competencia en la lengua con los valores de entrada indicados como 'datos' anteriormente. A continuación, se observa un registro de todos los intentos al crear dicha red:
+
+![ML Project Diary-6](https://user-images.githubusercontent.com/94480051/175072540-5c8a60f6-8c1d-4f17-bb62-73970ca4181b.jpg)
+![ML Project Diary-7](https://user-images.githubusercontent.com/94480051/175072562-e76632f0-bd2f-47b6-968c-bdaf42a97b66.jpg)
+![ML Project Diary-8](https://user-images.githubusercontent.com/94480051/175072572-f5da6c99-c591-448c-a032-1e5434e1f048.jpg)
+
+Finalmente, el modelo elegido fue un modelo secuencial con un total de 1291 neuronas densamente conectadas, divididas en 15 capas de 86 neuronas cada una, además la última capa con 1 neurona. Cada dos capas, había un dropout del 20% de neuronas para reducir el overfitting del modelo. La activación de todas las capas fue reLU, menos la última que tenía una activación lineal puesto que debía predecir un valor continuo. Este modelo, valorado con el error cuadrático medio, obtuvo un error medio de 0,001029. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
+
+![image](https://user-images.githubusercontent.com/94480051/175074100-e5f0c1e9-c0ea-471a-a4c4-487485bf6689.png)
+
+Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio de aproximadamente 0,001 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
+
+![image](https://user-images.githubusercontent.com/94480051/175078742-dbf0a1dd-3e45-4f62-99bc-8486ec8ac6ad.png)
+
+
+
 
 ## Welcome to Ana's Capstone Project
 
