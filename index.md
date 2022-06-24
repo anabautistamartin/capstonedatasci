@@ -1,7 +1,12 @@
-# PROYECTO M0ISES
-## WHERE PSYCHOLILNGUISTICS AND MACHINE LEARNING MEET
+# PROYECTO M0ISES: Where Psycholinguistics and Machine Learning Meet
 
+En esta página encontrarás toda la información sobre el Proyecto M0ISES, un proyecto que reúne los avances en Psicolingüística y Machine Learning para alcanzar soluciones prácticas e innovadoras en el estudio del procesamiento del lenguaje. 
 
+## Introducción
+
+Hace tan solo unos años que la Ciencia Cognitiva y el estudio del lenguaje han visto un gran avance en tanto a las nuevas tecnologías de Machine Learning. tal y como ocurre en el cerebro ...
+
+Sin embargo, muchas preguntas aun quedan por resolver, y muchas de ellas encuentran soluciones muy eficientes en implementaciones de Machine Learning. Este proyecto se dirige, pues, a tratar de dar soluciones avanzadas a dos problemas principales, en base a una interesante [investigación](https://moises-bilingue.webflow.io/) actualmente en curso. 
 
 INTRODUCCION
 
