@@ -1,3 +1,4 @@
+
 # PROYECTO M0ISES: Where Psycholinguistics and Machine Learning Meet
 
 En esta página encontrarás toda la información sobre el Proyecto M0ISES, un proyecto que reúne los avances en Psicolingüística y Machine Learning para alcanzar soluciones prácticas e innovadoras en el estudio del procesamiento del lenguaje. 
@@ -6,49 +7,20 @@ En esta página encontrarás toda la información sobre el Proyecto M0ISES, un p
 
 Hace tan solo unos años que la Ciencia Cognitiva y el estudio del lenguaje han visto un gran avance en tanto a las nuevas tecnologías de Machine Learning. tal y como ocurre en el cerebro ...
 
-Sin embargo, muchas preguntas aun quedan por resolver, y muchas de ellas encuentran soluciones muy eficientes en implementaciones de Machine Learning. Este proyecto se dirige, pues, a tratar de dar soluciones avanzadas a dos problemas principales, en base a una interesante [investigación](https://moises-bilingue.webflow.io/) actualmente en curso. 
+Sin embargo, muchas preguntas aun quedan por resolver, y muchas de ellas encuentran soluciones muy eficientes en implementaciones de Machine Learning. Algunas de esas preguntas tienen que ver con la integración semántica durante el procesamiento del lenguaje. El presente proyecto se dirige, pues, a tratar de dar una solución avanzada a dos problemas principales, en base a una interesante [investigación sobre la ilusion de Moisés](https://moises-bilingue.webflow.io/).
 
-INTRODUCCION
+## Datos
 
-En esta página encontrarás todo el contenido del Proyecto M0ISES!
+Cada ensayo del estudio mencionado anteriormente consistía en la lectura y respuesta a una oración que podía ser semánticamente correcta o incorrecta. Para llevar a cabo este proyecto, se recogieron los resultados de todos los ensayos llevados a cabo en el estudio. La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
+- Eliminación de ensayos en los que los participantes no conocían la respuesta correcta a la oración.
+- Eliminación de ensayos en los que el sujeto respondía incorrectamente.
+- Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD).
+De esta forma, se descartaron los ensayos que no correspondían una integración semántica adecuada por parte de los sujetos. 
+Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub asociado a esta página. 
 
-a. Los orígenes del proyecto
-b. Los datos
-b. Problema 1: Proficiency
-c. Problema 2: Correctness semántica
-
-Continúa leyendo para saber más...
-
-## Orígenes
-
-Antes que nada, lee la siguiente pregunta y piensa la respuesta antes de continuar leyendo:
-
-Con algún conocimiento sobre la Biblia y la religión cristiana, habrás tardado poco en averiguar que Moisés llevó **2** animales de cada especie en su arca. Sin embargo, quizás no te habrás percatado de que no fue Moisés, sino Noé quien llevó esos animales en el arca. Si es así, enhorabuena, ¡has caido en la **ilusión de Moisés**!
-
-Este efecto de falsa congruencia semántica fue investigado por primera vez en el área de la psicolingüística en 1981 por Erickson y Mattsew (link). Durante las décadas posteriores se llevaron a cabo múltiples estudios para averiguar bajo qué condiciones se daba o no dicho efecto. Los modelos que trataron de explicar esta ilusión llegaron a la conclusión de que el procesamiento lingüístico es tan eficiente que nos lleva a asumir coherencia semántica en una pregunta o oración que cumple los mínimos de relación semántica (link). En casos como la pregunta anterior, los elementos de la oración están relacionados semánticamente ...
-
-Sin embargo, no ha sido hasta el año pasado que se ha estudiado por primera vez la ilusión de Moisés en las distintas lenguas de personas bilingües (Dehaene, link). Esto plantea una cuestión importante en el ámbito del procesamiento multilingüe ya que integra el concepto de **eficiencia semántica** en múltiples lenguas. El coste cognitivo que supone procesar en una lengua en la que somos menos competentes podría hacer que suceda en mayor medida la ilusión de Moisés, ya que se destinan menos recursos a comprobar la coherencia semántica, o bien hacer que suceda en menor medida la ilusión, ya que al añadir más esfuerzos para procesar, tambien es más probable detectar una incongruencia. Esta prematura línea de estudio aún no tiene la respuesta. 
-
-Los orígenes del Proyecto M0ISES se encuentran en uno de los estudios destinados a analizar la ilusión de Moisés, en este caso en personas bilingües de castellano y catalán. Esta investigación pertenece al Trabajo de Fin de Máster de la autora, Ana María Bautista Martín, desarrollado desde la Universidad de Barcelona y la Universidad Rovira i Virgili, con la colaboración de la Universidad de Minho (Portugal).
-
-## El estudio
-
-En este estudio, 78 sujetos (53 mujeres y 25 hombres) de edades comprendidas entre los 18 y 30 años (Mean=22,78; SD=...) completaron una tarea online de lectura de oraciones sobre las que debían responder si eran correctas o incorrectas. El procedimiento para los sujetos bilingües seguía el siguiente orden: consentían a participar en el experimento, recibían los ensayos de entrenamiento, contestaban a 73 oraciones en una de las dos lenguas (castellano o catalán), contestaban a otras 73 oraciones en la otra lengua (castellano o catalán) y finalmente completaban una serie de preguntas sociolingüísticas sobre cada lengua.
-
-Es importante destacar que estos sujetos bilingües de castellano y catalán fueron seleccionados precisamente por tener altos niveles de competencia en las dos lenguas. Además, la situación sociolingüística en territorios catalanoparlantes hace que estos bilingües sean normalmente altamente balanceados en ambas lenguas. 
-
-## Los datos
-
-Para este proyecto, se contó con los datos del estudio descrito anteriormente. Los datos se limpiaron de la siguiente forma:
-- Eliminación de ensayos en los que el sujeto no conocía la respuesta correcta a la oración. 
-- Eliminación de ensayos en los que el sujeto tenía la ilusión (respondía 'correcta' a una oración incorrecta). Estos ensayos podrían crear confusión para el modelo, ya que se trata de oraciones que se integran semánticamente como correctas pero en realidad son incorrectas. 
-- Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD). Estos ensayos son poco informativos ya que indican despiste o fatiga del sujeto al llevar a cabo el experimento. 
-
-De esta forma, se perdió aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el siguiente enlace:
-
-Cada ensayo contenía inicialmente las siguientes columnas:
-1. Versión de la oración: correcta o incorrecta, indicado con 1 y 0 respectivamente. 
-2. Número de ítem leído, de un listado de 146 ítems.
+Cada ensayo, esto es cada línea de la base de datos, contiene las siguientes columnas:
+**1. Versión de la oración**. Cada oración tenía dos versiones: Incorrecta (0) o Correcta (1). Los sujetos leen todas las oraciones únicamente en una de las dos versiones.
+**2. Ítem.** Indica el número de ítem leído en el ensayo, de un listado de 146 ítems.
 3. Milisegundos de lectura de la oración, ponderados según la longitud de la oracion en número de caracteres. 
 4. Lengua en la que se lee la oración: castellano o catalan, indicado con 0 y 1 respectivamente. 
 5. Frecuencia de exposición a la lengua leída, indicado con valores del 0 al 1 por el propio sujeto. 
