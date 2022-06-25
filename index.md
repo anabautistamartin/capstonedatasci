@@ -34,8 +34,7 @@ Variable | Nombre | Descripción
 **Orden** | orden | Es el orden de los bloques en el experimento para el sujeto que lee la oración. Los sujetos bilingües realizaban la tarea en castellano y en catalán, y el orden de esos bloques se contrabalanceó. Esta variable indica con un '0' que la primera tarea que recibió el sujeto fue en castellano, y con un '1' que la primera tarea fue en catalán. 
 **Condición experimental** | contextlab1 y contextlab2 | Son dos variables dicotómicas que, conjuntamente, indican la condición experimental a la que pertenece el ensayo. 
 
-<img width="691" alt="image" src="https://user-images.githubusercontent.com/94480051/175779314-e51420a9-9a00-418e-a711-db400cdaa690.png">
-
+<img width="691" alt="image" align='center' src="https://user-images.githubusercontent.com/94480051/175779314-e51420a9-9a00-418e-a711-db400cdaa690.png">
 
 ## Problema 1
 
@@ -75,7 +74,7 @@ Es importante remarcar que en otros intentos a la hora de crear el modelo, el mi
 
 Para conseguir predecir el valor en nivel de competencia lingüística que tenían los sujetos que realizaban cada ensayo, se creó una red neuronal que, al introducir los datos que contenía el dataset inicial, conseguía predecir el valor real con un error cuadrático medio de aproximadamente 0,0008. Esto significa que con la estructura neuronal empleada en este modelo se puede obtener eficazmente el nivel de competencia en base al tiempo de lectura de un ítem concreto, el porcentaje de exposición, uso y preferencia de lectura de la lengua en que se lee, y otras variables sobre el contexto experimental. Además, las variables de exposición, uso y preferencia de lectura tienen una contribución importante sobre esa predicción, puesto que el mismo modelo entrenado sin la entrada de esos valores no consigue niveles tan altos de precisión. 
 
-No obstante, y en línea con la motivación inicial que introducía este problema, los valores que este modelo predice siguen siendo valores subjetivos. Es decir, en la introducción a este primer problema se hablaba de que es necesaria una medida rápida y puntera del nivel objetivo de competencia en las diferentes lenguas. Implementando este modelo, lo máximo que se puede conseguir es una medida rápida y lo suficientemente puntera del nivel de competencia subjetivo que se atribuye cada sujeto a sí mismo, pues es con los datos con los que se contaba inicialmente. Para conseguir dichos objetivos, las futuras líneas de investigación deberían elaborar un modelo similar que pudiese ser entrenado con los niveles de competencia reales, esto es, los valores objetivos estimados con otros tests. 
+No obstante, y en línea con la motivación inicial que introducía este problema, los valores que este modelo predice siguen siendo valores subjetivos. Es decir, en la introducción a este primer problema se hablaba de que es necesaria una medida rápida y puntera del nivel objetivo de competencia en las diferentes lenguas. Implementando este modelo, lo máximo que se puede conseguir es una medida rápida y lo suficientemente puntera del nivel de competencia subjetivo que se atribuye cada sujeto a sí mismo, pues es con los datos con los que se contaba inicialmente. Para conseguir los objetivos iniciales, las futuras líneas de investigación deberían elaborar un modelo similar que pudiese ser entrenado con los niveles de competencia reales, esto es, los valores objetivos estimados con otros tests. 
 
 
 ## Welcome to Ana's Capstone Project
