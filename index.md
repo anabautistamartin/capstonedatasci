@@ -5,31 +5,34 @@ En esta página encontrarás toda la información sobre el Proyecto M0ISES, un p
 
 ## Introducción
 
-Hace tan solo unos años que la ciencia cognitiva y el estudio del lenguaje han visto un gran avance en tanto a las nuevas tecnologías de Machine Learning. Dentro de la psicolingüística, la ciencia que estudia los mecanismos cognitivos del procesamiento del lenguaje, existen muchas preguntas por resolver, y gran parte de ellas se pueden empezar a resolver implementando modelos automáticos que simulen el procesamiento. Además, estas técnicas pueden crear herramientas muy precisas en la evaluación sociolingüística necesaria para estas investigaciones. 
+Hace tan solo unos años que la ciencia cognitiva y el estudio del lenguaje han visto un gran avance en tanto a las nuevas tecnologías de Machine Learning. Dentro de la psicolingüística, la ciencia que estudia los mecanismos cognitivos del procesamiento del lenguaje, existen muchas preguntas por resolver, y gran parte de ellas se pueden empezar a responder implementando modelos automáticos que simulen el procesamiento. Además, estas técnicas pueden crear herramientas muy precisas en la evaluación de los sujetos que es necesaria para este tipo de investigaciones. 
 
-El presente proyecto se dirige a tratar de dar una respuesta a dos problemas principales, empleando las técnicas de aprendizaje automático. Estos problemas emergen de una interesante [investigación sobre la ilusion de Moisés](https://moises-bilingue.webflow.io/). Ante oraciones como 'Según se dice en la Biblia, Moisés llevó dos animales de cada tipo en el arca', pocos individuos son capaces de reconocer el error y producen una falsa ilusión de coherencia semántica. Estas ilusiones son sumamente interesantes para este campo porque revelan un error sistemático de nuestro sistema cognitivo a la hora de integrar la información semántica. En la investigación mencionada anteriormente, se presentaban este tipo de oraciones en castellano y en catalán, y se pedía a los sujetos responder si era correcta o incorrecta. Además, se recogía información sobre el tiempo de lectura de la oración y otras variables sociolingüísticas que indicaban el nivel que tenían los sujetos en cada lengua. Esta investigacion y sus resultados fueron la base del proyecto que se presenta en esta página.
+El presente proyecto se dirige a tratar de dar una respuesta a dos problemas principales empleando las técnicas de aprendizaje automático. Estos problemas emergen de una interesante [investigación sobre la ilusion de Moisés](https://moises-bilingue.webflow.io/). Ante oraciones como *"Según se dice en la Biblia, Moisés llevó dos animales de cada tipo en el arca"*, pocos individuos son capaces de reconocer el error y producen una falsa ilusión de coherencia semántica. Estas ilusiones son sumamente interesantes para este campo porque revelan un error sistemático de nuestro sistema cognitivo a la hora de integrar la información semántica. En la investigación mencionada anteriormente, se presentaban este tipo de oraciones en castellano y en catalán, y se pedía a los sujetos responder si era correcta o incorrecta. Además, se recogía información sobre el tiempo de lectura de la oración y otras variables sociolingüísticas que indicaban el nivel que tenían los sujetos en cada lengua. Esta investigacion y sus resultados fueron la base del proyecto que se presenta en esta página.
 
 ## Datos
 
-Primero, se recogieron los resultados de todos los ensayos llevados a cabo en la investigación. La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
+Primero, se recogieron los resultados de todos los ensayos llevados a cabo en la investigación. Dichos resultados provienen de 43 sujetos bilingües de castellano y catalán (66% mujeres, edad media = 22,70), y 35 sujetos (70% mujeres, edad media = 22,86) que no conocían el catalán pero eran hablantes nativos de castellano. La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
 - Eliminación de ensayos en los que los participantes no conocían la respuesta correcta a la oración.
 - Eliminación de ensayos en los que los sujetos respondían incorrectamente.
 - Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD).
 De esta forma, se descartaron los ensayos que no correspondían una integración semántica adecuada por parte de los sujetos. 
-Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub...
+Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub bajo el nombre ['dataset'](https://github.com/anabautistamartin/capstonedatasci/files/8984239/dataset.csv).
 
-Cada ensayo, esto es cada línea de la base de datos, contiene las siguientes columnas:
-1. **Versión de la oración**. Cada oración tenía dos versiones: Incorrecta (0) o Correcta (1). Los sujetos leen todas las oraciones únicamente en una de las dos versiones.
-**2. Ítem.** Indica el número de ítem leído en el ensayo, de un listado de 146 ítems.
-3. Milisegundos de lectura de la oración, ponderados según la longitud de la oracion en número de caracteres. 
-4. Lengua en la que se lee la oración: castellano o catalan, indicado con 0 y 1 respectivamente. 
-5. Frecuencia de exposición a la lengua leída, indicado con valores del 0 al 1 por el propio sujeto. 
-6. Preferencia de lectura en la lengua leída (i.e., en qué porcentaje elegirían leer en la lengua del ensayo si pudiesen elegir cualquier lengua), indicado con valores del 0 al 1. 
-7. Uso de la lengua: promedio de respuestas a un inventario de uso de la lengua en distintas situaciones (ambientes familiares, profesionales, ocio, etc.), indicado con valores del 0 al 1.
-8. Nivel de competencia en la lengua: promedio de la autoestimación en nivel de competencia de la lengua en escritura, lectura, escucha y habla, indicado con valores del 0 al 1.
-9. Grupo: grupo al que pertenecía el sujeto, si es el monolingüe (control) o el bilingue, indicado con 0 y 1 respectivamente. 
-10. Orden: orden de los bloques en el experimento, si se realiza primero la tarea en castellano o en catalán, indicado con 0 y 1 respectivamente. 
-11. Contextlab1 y contextlab2: variables dicotómicas que indican, conjuntamente, la condición experimental a la que pertenece el ensayo.
+Cada ensayo del experimento corresponde a cada línea de la base de datos mencionada anteriormente, e incluye las variables o columnas indicadas en la tabla de a continuación:
+
+Variable | Nombre | Descripción
+--- | :---: | :---: | :---:
+**Versión de la oración**  | version | Corresponde a la versión de la oración presentada al sujeto, en tanto que cada ítem se podía presentar a los sujetos en su versión correcta o incorrecta. '0' indica la versión incorrecta (e.g., *'Según se dice en la Biblia, Moisés llevó dos animales de cada tipo en el arca'*), y '1' indica la versión correcta (e.g., *'Según se dice en la Biblia, Noé llevó dos animales de cada tipo en el arca'*). 
+**Ítem**  | item | Indica el número de ítem leído en el ensayo, de un listado de 146 ítems.
+**Milisegundos de lectura de la oración** | ms | Indica cuánto tarda el sujeto en ese ensayo en leer el ítem, medido en milisegundos ponderados según la longitud de la oración en número de caracteres. 
+ **Lengua** | lang | Corresponde a la lengua en la que se lee en la oración, ya que el grupo de sujetos bilingüe hacía la tarea en castellano y en catalán. '0' indica que se lee en castellano, y '1' indica que se lee en catalán.
+**Frecuencia de exposición** | expo | Indica, de 0 al 1, la frecuencia con la que los sujetos están expuestos a la lengua en la que leen el ítem. Esto se incluyó con la pregunta "Del 0 al 10, ¿cuánto estás expuesto/a al (castellano/catalán) actualmente?" en el experimento original. 
+**Preferencia de lectura** | pref | Corresponde, de 0 a 1, a la preferencia que tienen los sujetos por leer una pieza de información en la lengua en la que leen el ítem. En el experimento, se incluyó bajo la pregunta "Si pudieses leer un texto en cualquiera de las lenguas que conoces, indica del 0 al 10 en qué medida elegirías leerlo en (castellano/catalán)".
+**Uso de la lengua** | uso | Supone el promedio de respuestas de los sujetos, de 0 a 1, a una serie de preguntas sobre cuánto usan la lengua en que leen el ítem. Las preguntas preguntaban a los participantes por el porcentaje de uso de cada lengua en situaciones diversas: ambientes familiares, profesionales, ocio, uso de redes sociales, etc.
+**Nivel de competencia en la lengua** | profic | Es el promedio de cuánto indican los sujetos que saben hablar, escribir, entender y leer cada lengua. Es una medida subjetiva del nivel de competencia total en la lengua, y su rango es de 0 a 1. 
+**Grupo** | grupo | Corresponde al grupo al que pertenecía el sujeto, si era el grupo bilingüe de castellano y catalán ('1'), o si era el grupo nativo de castellano que no conoce el catalán ('0').
+**Orden** | orden | Es el orden de los bloques en el experimento para el sujeto que lee la oración. Los sujetos bilingües realizaban la tarea en castellano y en catalán, y el orden de esos bloques se contrabalanceó. Esta variable indica con un '0' que la primera tarea que recibió el sujeto fue en castellano, y con un '1' que la primera tarea fue en catalán. 
+**Condición experimental** | contextlab1 y contextlab2 | Son dos variables dicotómicas que, conjuntamente, indican la condición experimental a la que pertenece el ensayo. 
 
 ## Problema 1
 
