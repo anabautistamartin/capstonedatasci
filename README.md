@@ -1,6 +1,13 @@
 
 # Proyecto Moises
 
+## Organización del repositorio
+
+En este repositorio de GitHub se encuentran todos los ficheros empleados al llevar a cabo el Proyecto M0ISES:
+- Los datasets: [M0ISES](https://github.com/anabautistamartin/capstonedatasci/files/8984239/dataset.csv) y [M0ISESILLUSION](https://github.com/anabautistamartin/capstonedatasci/files/8984240/datasetillusions.csv)
+- Los scripts de los modelos: [PROBLEMA 1] y [PROBLEMA 2]
+- Este fichero README, y los ficheros index y config para soportar la página de GitHub.
+
 ## Requerimientos
 
 El código del Proyecto M0ISES fue creado desde Python 3.8.8. Esta versión de Python se puede adquirir e implementar con:
