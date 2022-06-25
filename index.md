@@ -34,7 +34,8 @@ Variable | Nombre | Descripción
 **Orden** | orden | Es el orden de los bloques en el experimento para el sujeto que lee la oración. Los sujetos bilingües realizaban la tarea en castellano y en catalán, y el orden de esos bloques se contrabalanceó. Esta variable indica con un '0' que la primera tarea que recibió el sujeto fue en castellano, y con un '1' que la primera tarea fue en catalán. 
 **Condición experimental** | contextlab1 y contextlab2 | Son dos variables dicotómicas que, conjuntamente, indican la condición experimental a la que pertenece el ensayo. 
 
-<img width="691" alt="image" align='center' src="https://user-images.githubusercontent.com/94480051/175779314-e51420a9-9a00-418e-a711-db400cdaa690.png">
+<p align="center">
+<img width="691" alt="image" src="https://user-images.githubusercontent.com/94480051/175779314-e51420a9-9a00-418e-a711-db400cdaa690.png"></p>
 
 ## Problema 1
 
