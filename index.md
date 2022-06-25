@@ -47,12 +47,10 @@ En los estudios en psicolingüística, es extremadamente importante conocer el n
 
 Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz.
 
-<p align="center">
 ![image](https://user-images.githubusercontent.com/94480051/175782372-ece435aa-f239-4f31-8476-b1bdf9315843.png)
 ![image](https://user-images.githubusercontent.com/94480051/175782377-c43303ea-14b8-43ed-aed4-13c11ed43544.png)
 ![image](https://user-images.githubusercontent.com/94480051/175782379-99d9cfac-976c-424c-8235-f0b28b462723.png)
 ![image](https://user-images.githubusercontent.com/94480051/175782382-b448848f-7525-4bc2-b45c-e6f243f80522.png)
-</p>
 
 ### Construcción del modelo
 
@@ -62,22 +60,16 @@ De esta forma, se creó una red neuronal profunda con la intención de conseguir
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, había un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
 
-<p align="center">
 ![image](https://user-images.githubusercontent.com/94480051/175782399-2d1fbd81-c4ec-409d-ba06-7ddacc70c61c.png)
-</p>
 
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
-<p align="center">
 ![image](https://user-images.githubusercontent.com/94480051/175782412-0fb3ffb4-279d-46c5-8ca1-9350936d76f6.png)
-</p>
 
 Es importante remarcar que en otros intentos a la hora de crear el modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tanto a los datos. El error cuadrático medio que alcanzó fue de 0,005223, mucho mayor que el que se consigue incluyendo las variables. En las siguientes gráficas se observa su reducción en error cuadrático medio y el ajuste a los datos.
 
-<p align="center">
 ![1_ReductionMSE(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175782430-484cefd2-1ca6-421b-8e3a-ac1b1a7f7f6e.png)
 ![1_ModelFitting(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175782435-8d60c8a1-1ee2-4047-a210-45ce12d046db.png)
-</p>
 
 ### Interpretación
 
@@ -85,8 +77,51 @@ Para conseguir predecir el valor en nivel de competencia lingüística que tení
 
 No obstante, y en línea con la motivación inicial que introducía este problema, los valores que este modelo predice siguen siendo valores subjetivos. Es decir, en la introducción a este primer problema se hablaba de que es necesaria una medida rápida y puntera del nivel objetivo de competencia en las diferentes lenguas. Implementando este modelo, lo máximo que se puede conseguir es una medida rápida y lo suficientemente puntera del nivel de competencia subjetivo que se atribuye cada sujeto a sí mismo, pues es con los datos con los que se contaba inicialmente. Para conseguir los objetivos iniciales, las futuras líneas de investigación deberían elaborar un modelo similar que pudiese ser entrenado con los niveles de competencia reales, esto es, los valores objetivos estimados con otros tests. 
 
+## Problema 2
 
+### Objetivos
 
+El segundo problema que el Proyecto M0ISES intentó resolver fue el de crear un modelo capaz de clasificar las oraciones de cada ensayo como semánticamente 'correctas' o 'incorrectas'. 
+
+En psicolingüística, existen algunas medidas objetivas y electrofisiológicas que sirven de indicadores de la integración semántica. Dentro de la técnica de electroencefalografía (EEG), existe el potencial evocado "N400". Este potencial es una onda negativa respecto a la línea base de medidas encefalográficas, que aparece a los 400 milisegundos de haber leído o escuchado una palabra semánticamente incongruente dentro de una oración [(Kutas y Federmeier, 2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4052444/). Esta se considera una medida objetiva de lo que el sujeto interpreta en su procesamiento, incluso se ha observado que este potencial aparece en sujetos que están aprendiendo una lengua y aún no saben responder si la oración es semánticamente congruente o no [(Ousterhout et al., 2006)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9922.2006.00361.x\). 
+
+Con los datos del presente estudio, es posible configurar un modelo que clasifique las oraciones en correctas o incorrectas, atendiendo entre otras variables al tiempo de lectura. Una prueba T de Student para medidas independientes encontró que el tiempo de lectura es significativamente diferente para los ensayos donde se lee una oración correcta y los ensayos donde se lee una oración incorrecta (t=4,187, p<0,001). En la gráfica inferior se presentan las medias en tiempo de lectura para esas dos condiciones. Las variables de exposición, uso, preferencia de lectura y nivel de competencia en cada lengua pueden ayudar a perfilar los tiempos de lectura según la destreza en la lengua, así como las variables que indican el grupo y el orden de las tareas.
+
+![image](https://user-images.githubusercontent.com/94480051/175783300-90061a9f-0cae-480f-9cf6-d54ab39d7117.png)
+
+Conseguir que este modelo emplee dichas medidas para clasificar en coherencia o incoherencia semántica podría significar un paso más en la búsqueda de otra medida objetiva de la congruencia semántica, esta vez incluyendo tiempos de lectura. Una herramienta como esta sería extremadamente útil apra apoyar la investigación en el procesamiento semántico en tanto que medir el tiempo de lectura es mucho más rápido y menos costoso que emplear medidas electrofisiológicas.
+
+### Construcción del modelo
+
+Para tratar de alcanzar dichos objetivos, se construyó una red neuronal profunda con la intención de que clasificase los ensayos según la versión en que se presentaba la oración. A continuación se muestra un registro de todos los intentos al crear dicho modelo:
+
+imagenes intentos
+
+Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neuronas densamente conectadas, divididas en 14 capas. Cada dos capas, se introdujo un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía dos neuronas con activación softmax puesto que debía realizar una predicción multi-clase. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 400 epochs, con el optimizador Adam, y obtuvo una precisión de aproximadamente 0,88. En la gráfica siguiente se puede observar el aumento de la accuracy a lo largo de los epochs.
+
+![image](https://user-images.githubusercontent.com/94480051/175783696-f11083a9-2c27-444a-9812-22a078a7933d.png)
+
+A continuación se muestra también la reducción de la función de pérdida, en Binary Cross-Entropy.
+
+![image](https://user-images.githubusercontent.com/94480051/175783702-c1bd81a3-e92c-4edb-9c5e-9cae053c3de6.png)
+
+ El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión:
+ 
+![image](https://user-images.githubusercontent.com/94480051/175783723-b51639fa-9971-4912-bbb0-66c3acd523d9.png)
+
+### Prediciendo ilusiones
+
+Una pregunta adicional que surgió creando este modelo, en línea con los objetivos iniciales, fue ver que clasificación haría el modelo sobre aquellos ensayos en los que había habido ilusiones semánticas. Esos ensayos fueron eliminados inicialmente del dataset durante la limpieza, puesto que eran ensayos en los que los sujetos no habían respondido correctamente: presentar la ilusión semántica significa detectar una oración incorrecta como correcta. 
+
+Sobre esos datos, que fueron un total de 501 ensayos, el modelo construido y testeado tuvo una precisión de aproximadamente 0,41. La gráfica siguiente representa la matriz de confusión para esos datos:
+
+![image](https://user-images.githubusercontent.com/94480051/175783905-a6119194-48ef-4c53-bdfd-7b5342b42e57.png)
+
+### Interpretación
+
+Al construir un modelo que clasificase los ensayos según si la frase leída era correcta o incorrecta, se consiguió una precisión del 0,88. Esta capacidad de clasificación es bastante alta, más que la precisión que se obtendría de una clasificación al azar. Al observar la matriz de confusión, se observa que hay bastantes más casos de clasificaciones correctas que incorrectas. Sin embargo, el modelo parece más preciso a la hora de clasificar ensayos con oraciones correctas como correctas que a la hora de discriminar oraciones incorrectas como incorrectas. También cabe considerar que había ligeramente más ensayos con oraciones correctas (53% de todos los ensayos) que incorrectas (47%) en el dataset empleado para testear el modelo, por lo cual esto podría explicar que haya más casos de clasificación correcta de oraciones correctas en contraste con oraciones incorrectas. En cualquier caso, es un modelo con un rendimiento lo suficientemente adecuado como para extraer conclusiones. 
+
+Más aún, es posible emplear este modelo para intentar clasificar aquellos ensayos en los que los sujetos presentan ilusiones semánticas, esto es, confunden oraciones incorrectas como correctas. 
 
 ## Welcome to Ana's Capstone Project
 
