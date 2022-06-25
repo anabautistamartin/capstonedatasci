@@ -17,5 +17,5 @@ El Proyecto M0ISES se basa en dos datasets, que se pueden descargar en los sigui
 
 Dataset | Tamaño | Tipo | Descarga
 --- | :---: | :---: | :---:
-MOISES | 355 KB | CSV | [Descargar]([dataset.csv](https://github.com/anabautistamartin/capstonedatasci/files/8984239/dataset.csv))
-MOISESILLUSION | 21 KB | CSV | [Descargar]([datasetillusions.csv](https://github.com/anabautistamartin/capstonedatasci/files/8984240/datasetillusions.csv))
+MOISES | 355 KB | CSV | [Descargar](https://github.com/anabautistamartin/capstonedatasci/files/8984239/dataset.csv)
+MOISESILLUSION | 21 KB | CSV | [Descargar](https://github.com/anabautistamartin/capstonedatasci/files/8984240/datasetillusions.csv)
