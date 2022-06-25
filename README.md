@@ -15,7 +15,7 @@ El código del Proyecto M0ISES fue creado desde Python 3.8.8. Esta versión de P
 
 El Proyecto M0ISES se basa en dos datasets, que se pueden descargar en los siguientes enlaces.
 
-Dataset | Tamaño | Descarga
---- | :---: | :---:
-MOISES | 2.4 GB | [download](<https://docs-assets.developer.apple.com/ml-research/datasets/gsn/vizdoom.zip>)
-MOISESILLUSION | 11.0 GB | [download](<https://docs-assets.developer.apple.com/ml-research/datasets/gsn/replica.zip>)
+Dataset | Tamaño | Tipo | Descarga
+--- | :---: | :---: | :---:
+MOISES | 355 KB | CSV | [Descargar]([dataset.csv](https://github.com/anabautistamartin/capstonedatasci/files/8984239/dataset.csv))
+MOISESILLUSION | 21 KB | CSV | [Descargar]([datasetillusions.csv](https://github.com/anabautistamartin/capstonedatasci/files/8984240/datasetillusions.csv))
