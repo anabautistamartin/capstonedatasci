@@ -5,21 +5,21 @@ En esta página encontrarás toda la información sobre el Proyecto M0ISES, un p
 
 ## Introducción
 
-Hace tan solo unos años que la Ciencia Cognitiva y el estudio del lenguaje han visto un gran avance en tanto a las nuevas tecnologías de Machine Learning. tal y como ocurre en el cerebro ...
+Hace tan solo unos años que la ciencia cognitiva y el estudio del lenguaje han visto un gran avance en tanto a las nuevas tecnologías de Machine Learning. Dentro de la psicolingüística, la ciencia que estudia los mecanismos cognitivos del procesamiento del lenguaje, existen muchas preguntas por resolver, y gran parte de ellas se pueden empezar a resolver implementando modelos automáticos que simulen el procesamiento. Además, estas técnicas pueden crear herramientas muy precisas en la evaluación sociolingüística necesaria para estas investigaciones. 
 
-Sin embargo, muchas preguntas aun quedan por resolver, y muchas de ellas encuentran soluciones muy eficientes en implementaciones de Machine Learning. Algunas de esas preguntas tienen que ver con la integración semántica durante el procesamiento del lenguaje. El presente proyecto se dirige, pues, a tratar de dar una solución avanzada a dos problemas principales, en base a una interesante [investigación sobre la ilusion de Moisés](https://moises-bilingue.webflow.io/).
+El presente proyecto se dirige a tratar de dar una respuesta a dos problemas principales, empleando las técnicas de aprendizaje automático. Estos problemas emergen de una interesante [investigación sobre la ilusion de Moisés](https://moises-bilingue.webflow.io/). Ante oraciones como 'Según se dice en la Biblia, Moisés llevó dos animales de cada tipo en el arca', pocos individuos son capaces de reconocer el error y producen una falsa ilusión de coherencia semántica. Estas ilusiones son sumamente interesantes para este campo porque revelan un error sistemático de nuestro sistema cognitivo a la hora de integrar la información semántica. En la investigación mencionada anteriormente, se presentaban este tipo de oraciones en castellano y en catalán, y se pedía a los sujetos responder si era correcta o incorrecta. Además, se recogía información sobre el tiempo de lectura de la oración y otras variables sociolingüísticas que indicaban el nivel que tenían los sujetos en cada lengua. Esta investigacion y sus resultados fueron la base del proyecto que se presenta en esta página.
 
 ## Datos
 
-Cada ensayo del estudio mencionado anteriormente consistía en la lectura y respuesta a una oración que podía ser semánticamente correcta o incorrecta. Para llevar a cabo este proyecto, se recogieron los resultados de todos los ensayos llevados a cabo en el estudio. La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
+Primero, se recogieron los resultados de todos los ensayos llevados a cabo en la investigación. La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
 - Eliminación de ensayos en los que los participantes no conocían la respuesta correcta a la oración.
-- Eliminación de ensayos en los que el sujeto respondía incorrectamente.
+- Eliminación de ensayos en los que los sujetos respondían incorrectamente.
 - Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD).
 De esta forma, se descartaron los ensayos que no correspondían una integración semántica adecuada por parte de los sujetos. 
-Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub asociado a esta página. 
+Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub...
 
 Cada ensayo, esto es cada línea de la base de datos, contiene las siguientes columnas:
-**1. Versión de la oración**. Cada oración tenía dos versiones: Incorrecta (0) o Correcta (1). Los sujetos leen todas las oraciones únicamente en una de las dos versiones.
+1. **Versión de la oración**. Cada oración tenía dos versiones: Incorrecta (0) o Correcta (1). Los sujetos leen todas las oraciones únicamente en una de las dos versiones.
 **2. Ítem.** Indica el número de ítem leído en el ensayo, de un listado de 146 ítems.
 3. Milisegundos de lectura de la oración, ponderados según la longitud de la oracion en número de caracteres. 
 4. Lengua en la que se lee la oración: castellano o catalan, indicado con 0 y 1 respectivamente. 
