@@ -48,10 +48,11 @@ En los estudios en psicolingüística, es extremadamente importante conocer el n
 Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz.
 
 <p align="center">
-![image](https://user-images.githubusercontent.com/94480051/175779962-3e65340d-db0c-4dd4-993d-0fdf3ddfbe36.png)
-![image](https://user-images.githubusercontent.com/94480051/175779970-aa7cd286-094a-49de-a81e-aea278dd7663.png)
-![image](https://user-images.githubusercontent.com/94480051/175779977-33b1d958-4c02-4d4f-a731-2baf856a745b.png)
-![image](https://user-images.githubusercontent.com/94480051/175779984-9f6826de-a073-4d00-91a8-ad10298b791f.png)</p>
+![image](https://user-images.githubusercontent.com/94480051/175782372-ece435aa-f239-4f31-8476-b1bdf9315843.png)
+![image](https://user-images.githubusercontent.com/94480051/175782377-c43303ea-14b8-43ed-aed4-13c11ed43544.png)
+![image](https://user-images.githubusercontent.com/94480051/175782379-99d9cfac-976c-424c-8235-f0b28b462723.png)
+![image](https://user-images.githubusercontent.com/94480051/175782382-b448848f-7525-4bc2-b45c-e6f243f80522.png)
+</p>
 
 ### Construcción del modelo
 
@@ -62,18 +63,21 @@ De esta forma, se creó una red neuronal profunda con la intención de conseguir
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, había un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
 
 <p align="center">
-![image](https://user-images.githubusercontent.com/94480051/175780444-8db3e0c5-45ce-48fd-80a0-fb156c06b61e.png)</p>
+![image](https://user-images.githubusercontent.com/94480051/175782399-2d1fbd81-c4ec-409d-ba06-7ddacc70c61c.png)
+</p>
 
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
 <p align="center">
-![image](https://user-images.githubusercontent.com/94480051/175780456-6f9ab25b-ef9f-4bf0-a6b5-7abffb787af9.png)</p>
+![image](https://user-images.githubusercontent.com/94480051/175782412-0fb3ffb4-279d-46c5-8ca1-9350936d76f6.png)
+</p>
 
 Es importante remarcar que en otros intentos a la hora de crear el modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tanto a los datos. El error cuadrático medio que alcanzó fue de 0,005223, mucho mayor que el que se consigue incluyendo las variables. En las siguientes gráficas se observa su reducción en error cuadrático medio y el ajuste a los datos.
 
 <p align="center">
-![1_ReductionMSE(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175780510-628cdee7-fc32-4d11-860c-d63d987ea95e.png)
-![1_ModelFitting(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175780514-21794061-65b9-4aec-b0c8-f10e98459be3.png)</p>
+![1_ReductionMSE(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175782430-484cefd2-1ca6-421b-8e3a-ac1b1a7f7f6e.png)
+![1_ModelFitting(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175782435-8d60c8a1-1ee2-4047-a210-45ce12d046db.png)
+</p>
 
 ### Interpretación
 
