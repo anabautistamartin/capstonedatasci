@@ -99,15 +99,15 @@ imagenes intentos
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neuronas densamente conectadas, divididas en 14 capas. Cada dos capas, se introdujo un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía dos neuronas con activación softmax puesto que debía realizar una predicción multi-clase. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 400 epochs, con el optimizador Adam, y obtuvo una precisión de aproximadamente 0,88. En la gráfica siguiente se puede observar el aumento de la accuracy a lo largo de los epochs.
 
-![image](https://user-images.githubusercontent.com/94480051/175783696-f11083a9-2c27-444a-9812-22a078a7933d.png)
+![image](https://user-images.githubusercontent.com/94480051/175784549-5c7656d2-505f-4558-876f-bca116a089f8.png)
 
 A continuación se muestra también la reducción de la función de pérdida, en Binary Cross-Entropy.
 
-![image](https://user-images.githubusercontent.com/94480051/175783702-c1bd81a3-e92c-4edb-9c5e-9cae053c3de6.png)
+![image](https://user-images.githubusercontent.com/94480051/175784554-963d7636-7aa0-4f28-a845-fa334f0e0b67.png)
 
- El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión:
- 
-![image](https://user-images.githubusercontent.com/94480051/175783723-b51639fa-9971-4912-bbb0-66c3acd523d9.png)
+El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión:
+
+![image](https://user-images.githubusercontent.com/94480051/175784560-2cad1f7d-3b6a-4bbb-a90c-9683b30b5858.png)
 
 ### Prediciendo ilusiones
 
@@ -115,49 +115,21 @@ Una pregunta adicional que surgió creando este modelo, en línea con los objeti
 
 Sobre esos datos, que fueron un total de 501 ensayos, el modelo construido y testeado tuvo una precisión de aproximadamente 0,41. La gráfica siguiente representa la matriz de confusión para esos datos:
 
-![image](https://user-images.githubusercontent.com/94480051/175783905-a6119194-48ef-4c53-bdfd-7b5342b42e57.png)
+![image](https://user-images.githubusercontent.com/94480051/175784636-64dab375-e5db-44c6-86ee-bcfad3ad2d03.png)
 
 ### Interpretación
 
 Al construir un modelo que clasificase los ensayos según si la frase leída era correcta o incorrecta, se consiguió una precisión del 0,88. Esta capacidad de clasificación es bastante alta, más que la precisión que se obtendría de una clasificación al azar. Al observar la matriz de confusión, se observa que hay bastantes más casos de clasificaciones correctas que incorrectas. Sin embargo, el modelo parece más preciso a la hora de clasificar ensayos con oraciones correctas como correctas que a la hora de discriminar oraciones incorrectas como incorrectas. También cabe considerar que había ligeramente más ensayos con oraciones correctas (53% de todos los ensayos) que incorrectas (47%) en el dataset empleado para testear el modelo, por lo cual esto podría explicar que haya más casos de clasificación correcta de oraciones correctas en contraste con oraciones incorrectas. En cualquier caso, es un modelo con un rendimiento lo suficientemente adecuado como para extraer conclusiones. 
 
-Más aún, es posible emplear este modelo para intentar clasificar aquellos ensayos en los que los sujetos presentan ilusiones semánticas, esto es, confunden oraciones incorrectas como correctas. 
+Más aún, es posible emplear este modelo para intentar clasificar aquellos ensayos en los que los sujetos presentan ilusiones semánticas, esto es, confunden oraciones incorrectas como correctas. A la hora de clasificar estos ensayos, el modelo tiene una precisión menor que la que se esperaría por azar, por lo que no es adecuado para predecir si los ítems son correctos o incorrectos semánticamente. Esto significa que el ítem leído, el tiempo de lectura del sujeto, sus variables sociolingüísticas en la lengua en la que se lee, y otras variables que discriminan el grupo al que pertenece el sujeto no sirven para estimar la congruencia semántica real. El modelo tampoco se equivoca de la misma forma que lo hacen los sujetos, porque en ese caso esperaríamos que clasificase los ensayos con ilusiones como 'correctos', que es lo que interpretan los participantes, y esto ocurre para la mayoría de los ensayos pero definitivamente no para todos. 
 
-## Welcome to Ana's Capstone Project
+En vista de estos resultados, podemos decir que hemos alcanzado un modelo que clasifica satisfactoriamente los ensayos en oraciones correctas e incorrectas. El hecho de que se equivoque para los ensayos que contienen ilusiones semánticas no se debe confundir con que el modelo esté simulando el procesamiento humano, pues en este modelo la entrada de datos es muy diferente a la entrada de datos que obtienen los humanos cuando procesan oraciones. La unica conclusión que se puede extraer es que integrando el número de ítem presentado, la lengua en que se muestra, algunas variables sociolingüísticas y de condición experimental, y el tiempo de lectura de la oración, el modelo se confunde ante casos de ilusiones semanticas. Además, este es un modelo que por el momento tampoco puede servir de medida objetiva de integracion semantic al nivel que lo hace el potencial evocado N400, puesto que para ese objetivo, modelos más extensos que contasen unicamente con el tiempo de lectura de la oracion deberian ser entrenados. Sin embargo, dados los resultados obtenidos, está bien encaminado para alcanzar ese objetivo. 
 
-You can use the [editor on GitHub](https://github.com/anabautistamartin/capstonedatasci/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Conclusión general
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+El Proyecto M0ISES aborda dos problemas dentro del campo de la psicolingüística. Por un lado, intenta conseguir una medida rápida y eficiente del nivel de competencia en una lengua mediante una red neuronal de predicción que obtiene este valor teniendo en cuenta variables como el tiempo de lectura de una oración y otras variables sociolingüísticas. Por otro lado, trata de obtener un clasificador entrenando una red neuronal en distinguir ensayos de lectura de oraciones correctas e incorrectas, y comprueba su eficacia al clasificar los ensayos en los que los participantes producen ilusiones semánticas. 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
+Aunque el rendimiento de los modelos para cada uno de estos dos problemas haya sido adecuado y las conclusiones estén en línea con los resultados esperados, los objetivos iniciales fueron demasiado ambiciosos como para poder resolverse de una forma tan simple. Mucha más investigación y experimentación haría falta para poder darles respuesta. Por suerte, el proceso de construcción de estos problemas ha sido lo suficientemente laborioso y motivador como para continuar explorando el nexo entre psicolingüística y aprendizaje automático. Es evidente que de estas dos disciplinas se pueden obtener los resultados más innovadores y avanzados para desvelar qué ocurre durante el procesamiento del lenguaje, por lo que es imperativo continuar progresando en esta dirección.
 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anabautistamartin/capstonedatasci/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+> Este es un proyecto creado por Ana M. Bautista Martín. Para más información, [contactar](mailto:anambautistamartin@gmail.com) con la autora. 
