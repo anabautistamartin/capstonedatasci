@@ -45,12 +45,13 @@ El primer problema que el Proyecto M0ISES trató de resolver fue el de encontrar
 
 En los estudios en psicolingüística, es extremadamente importante conocer el nivel que tienen los individuos en las lenguas que se pretenden analizar. Sin embargo, pocas veces se puede aplicar un test exhaustivo del nivel de competencia objetivo que se tiene en una lengua, ya que normalmente se trata de pruebas largas que interrumpen el curso de los experimentos y que pueden fatigar al participante. En consecuencia, usualmente se recurre a preguntar al sujeto cómo se valora a sí mismo en las destrezas de escritura, habla, lectura y escucha para una lengua. Esta medida es considerablemente menos costosa, pero incluye una gran dosis de subjetividad que puede estar distorsionando las repsuestas. Por esta razón, en este campo de estudio se busca una medida objetiva del nivel de competencia en una lengua que sea rápida de conseguir en situaciones experimentales. 
 
-Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz. 
+Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz.
 
+<p align="center">
 ![image](https://user-images.githubusercontent.com/94480051/175779962-3e65340d-db0c-4dd4-993d-0fdf3ddfbe36.png)
 ![image](https://user-images.githubusercontent.com/94480051/175779970-aa7cd286-094a-49de-a81e-aea278dd7663.png)
 ![image](https://user-images.githubusercontent.com/94480051/175779977-33b1d958-4c02-4d4f-a731-2baf856a745b.png)
-![image](https://user-images.githubusercontent.com/94480051/175779984-9f6826de-a073-4d00-91a8-ad10298b791f.png)
+![image](https://user-images.githubusercontent.com/94480051/175779984-9f6826de-a073-4d00-91a8-ad10298b791f.png)</p>
 
 ### Construcción del modelo
 
@@ -60,22 +61,27 @@ De esta forma, se creó una red neuronal profunda con la intención de conseguir
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, había un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
 
-![image](https://user-images.githubusercontent.com/94480051/175780444-8db3e0c5-45ce-48fd-80a0-fb156c06b61e.png)
+<p align="center">
+![image](https://user-images.githubusercontent.com/94480051/175780444-8db3e0c5-45ce-48fd-80a0-fb156c06b61e.png)</p>
 
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
-![image](https://user-images.githubusercontent.com/94480051/175780456-6f9ab25b-ef9f-4bf0-a6b5-7abffb787af9.png)
+<p align="center">
+![image](https://user-images.githubusercontent.com/94480051/175780456-6f9ab25b-ef9f-4bf0-a6b5-7abffb787af9.png)</p>
 
 Es importante remarcar que en otros intentos a la hora de crear el modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tanto a los datos. El error cuadrático medio que alcanzó fue de 0,005223, mucho mayor que el que se consigue incluyendo las variables. En las siguientes gráficas se observa su reducción en error cuadrático medio y el ajuste a los datos.
 
+<p align="center">
 ![1_ReductionMSE(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175780510-628cdee7-fc32-4d11-860c-d63d987ea95e.png)
-![1_ModelFitting(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175780514-21794061-65b9-4aec-b0c8-f10e98459be3.png)
+![1_ModelFitting(UNSELECTED)](https://user-images.githubusercontent.com/94480051/175780514-21794061-65b9-4aec-b0c8-f10e98459be3.png)</p>
 
 ### Interpretación
 
 Para conseguir predecir el valor en nivel de competencia lingüística que tenían los sujetos que realizaban cada ensayo, se creó una red neuronal que, al introducir los datos que contenía el dataset inicial, conseguía predecir el valor real con un error cuadrático medio de aproximadamente 0,0008. Esto significa que con la estructura neuronal empleada en este modelo se puede obtener eficazmente el nivel de competencia en base al tiempo de lectura de un ítem concreto, el porcentaje de exposición, uso y preferencia de lectura de la lengua en que se lee, y otras variables sobre el contexto experimental. Además, las variables de exposición, uso y preferencia de lectura tienen una contribución importante sobre esa predicción, puesto que el mismo modelo entrenado sin la entrada de esos valores no consigue niveles tan altos de precisión. 
 
 No obstante, y en línea con la motivación inicial que introducía este problema, los valores que este modelo predice siguen siendo valores subjetivos. Es decir, en la introducción a este primer problema se hablaba de que es necesaria una medida rápida y puntera del nivel objetivo de competencia en las diferentes lenguas. Implementando este modelo, lo máximo que se puede conseguir es una medida rápida y lo suficientemente puntera del nivel de competencia subjetivo que se atribuye cada sujeto a sí mismo, pues es con los datos con los que se contaba inicialmente. Para conseguir los objetivos iniciales, las futuras líneas de investigación deberían elaborar un modelo similar que pudiese ser entrenado con los niveles de competencia reales, esto es, los valores objetivos estimados con otros tests. 
+
+
 
 
 ## Welcome to Ana's Capstone Project
