@@ -11,10 +11,13 @@ El presente proyecto se dirige a tratar de dar una respuesta a dos problemas pri
 
 ## Datos
 
-Primero, se recogieron los resultados de todos los ensayos llevados a cabo en la investigación. Dichos resultados provienen de 43 sujetos bilingües de castellano y catalán (66% mujeres, edad media = 22,70), y 35 sujetos (70% mujeres, edad media = 22,86) que no conocían el catalán pero eran hablantes nativos de castellano. La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
+Primero, se recogieron los resultados de todos los ensayos llevados a cabo en la investigación. Dichos resultados provienen de 43 sujetos bilingües de castellano y catalán (66% mujeres, edad media = 22,70), y 35 sujetos (70% mujeres, edad media = 22,86) que no conocían el catalán pero eran hablantes nativos de castellano. 
+
+La limpieza de esos datos se realizó en una plataforma externa siguiendo el criterio siguiente: 
 - Eliminación de ensayos en los que los participantes no conocían la respuesta correcta a la oración.
 - Eliminación de ensayos en los que los sujetos respondían incorrectamente.
 - Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD).
+
 De esta forma, se descartaron los ensayos que no correspondían una integración semántica adecuada por parte de los sujetos. 
 Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub bajo el nombre ['M0ISES'](https://github.com/anabautistamartin/capstonedatasci/files/8990332/M0ISES.csv).
 
