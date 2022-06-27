@@ -50,10 +50,7 @@ En los estudios en psicolingüística, es extremadamente importante conocer el n
 
 Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz.
 
-![image](https://user-images.githubusercontent.com/94480051/175782372-ece435aa-f239-4f31-8476-b1bdf9315843.png)
-![image](https://user-images.githubusercontent.com/94480051/175782377-c43303ea-14b8-43ed-aed4-13c11ed43544.png)
-![image](https://user-images.githubusercontent.com/94480051/175782379-99d9cfac-976c-424c-8235-f0b28b462723.png)
-![image](https://user-images.githubusercontent.com/94480051/175782382-b448848f-7525-4bc2-b45c-e6f243f80522.png)
+![prob 1 - nivel de competencia con todo](https://user-images.githubusercontent.com/94480051/175982802-ee713d6e-847d-4be1-a310-ca1b9dd4020a.png)
 
 ### Construcción del modelo
 
