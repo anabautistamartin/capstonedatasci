@@ -72,7 +72,7 @@ La activación de todas las capas fue reLU, menos la última capa que tenía una
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
 <p align="center">
-<src="https://user-images.githubusercontent.com/94480051/175782412-0fb3ffb4-279d-46c5-8ca1-9350936d76f6.png"></p>
+![image](https://user-images.githubusercontent.com/94480051/175782412-0fb3ffb4-279d-46c5-8ca1-9350936d76f6.png)</p>
 
 Es importante remarcar que en otros intentos a la hora de crear el modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tanto a los datos. El error cuadrático medio que alcanzó fue de 0,005223, mucho mayor que el que se consigue incluyendo las variables. En las siguientes gráficas se observa su reducción en error cuadrático medio y el ajuste a los datos.
 
