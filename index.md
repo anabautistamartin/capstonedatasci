@@ -64,16 +64,16 @@ Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neur
 
 La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
 
-![reduction mse model selected](https://user-images.githubusercontent.com/94480051/175986270-952bc164-a1c7-479d-af40-738f3c5484ba.png)
+![reduction mse selected](https://user-images.githubusercontent.com/94480051/175987520-5a5fa8c0-fa0d-44cc-b660-45c8e5ee25ef.png)
 
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
-![fitting model selected](https://user-images.githubusercontent.com/94480051/175986351-0b0f950c-2a1c-4eb9-86e8-abd80960456b.png)
+![fitting selected](https://user-images.githubusercontent.com/94480051/175987550-ebb63093-47df-4a08-934b-ec166157ca07.png)
 
 Es importante remarcar que en otros intentos a la hora de crear el modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tanto a los datos. El error cuadrático medio que alcanzó fue de 0,005223, mucho mayor que el que se consigue incluyendo las variables. En las siguientes gráficas se observa su reducción en error cuadrático medio y el ajuste a los datos.
 
-![reduction mse model unselected](https://user-images.githubusercontent.com/94480051/175986403-7cec4b5c-58b9-4589-add3-9d8b4f245560.png)
-![fitting model unselectd](https://user-images.githubusercontent.com/94480051/175986433-4293b8f6-700a-4178-a28f-be6a8679adcd.png)
+![reduction in mse unselected](https://user-images.githubusercontent.com/94480051/175987583-59d1283e-bc8a-4909-9bcb-bd5528ed4fec.png)
+![fitting unselected](https://user-images.githubusercontent.com/94480051/175987608-8f353d64-9e90-41b7-ae47-b57680a3b1c5.png)
 
 ### Interpretación
 
