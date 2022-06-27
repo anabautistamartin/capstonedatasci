@@ -50,7 +50,7 @@ En los estudios en psicolingüística, es extremadamente importante conocer el n
 
 Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz.
 
-![prob 1](https://user-images.githubusercontent.com/94480051/175988824-963574fb-7c30-4ef6-a945-cb6f5ea493a9.png)
+![prob 1](https://user-images.githubusercontent.com/94480051/175990147-2b7e110e-c1ab-45f7-afc0-3ffed8ab6ca1.png)
 
 ### Construcción del modelo
 
@@ -64,7 +64,7 @@ Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neur
 
 La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
 
-![1](https://user-images.githubusercontent.com/94480051/175988743-f6a31b8e-16cb-49d8-890e-798f0ced632a.png)
+![reduction mse selected](https://user-images.githubusercontent.com/94480051/175990192-3177eb01-00a0-4bf9-8eec-41c2bffb7313.png)
 
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
@@ -91,7 +91,7 @@ En psicolingüística, existen algunas medidas objetivas y electrofisiológicas 
 
 Con los datos del presente estudio, es posible configurar un modelo que clasifique las oraciones en correctas o incorrectas, atendiendo entre otras variables al tiempo de lectura. Una prueba T de Student para medidas independientes encontró que el tiempo de lectura es significativamente diferente para los ensayos donde se lee una oración correcta y los ensayos donde se lee una oración incorrecta (t=4,187, p<0,001). En la gráfica inferior se presentan las medias en tiempo de lectura para esas dos condiciones. Las variables de exposición, uso, preferencia de lectura y nivel de competencia en cada lengua pueden ayudar a perfilar los tiempos de lectura según la destreza en la lengua, así como las variables que indican el grupo y el orden de las tareas.
 
-![image](https://user-images.githubusercontent.com/94480051/175783300-90061a9f-0cae-480f-9cf6-d54ab39d7117.png)
+![ms por version](https://user-images.githubusercontent.com/94480051/175991158-d1cdc7d6-f756-4d18-9da1-65ac733ba105.png)
 
 Conseguir que este modelo emplee dichas medidas para clasificar en coherencia o incoherencia semántica podría significar un paso más en la búsqueda de otra medida objetiva de la congruencia semántica, esta vez incluyendo tiempos de lectura. Una herramienta como esta sería extremadamente útil apra apoyar la investigación en el procesamiento semántico en tanto que medir el tiempo de lectura es mucho más rápido y menos costoso que emplear medidas electrofisiológicas.
 
@@ -107,15 +107,15 @@ Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neur
 
 La activación de todas las capas fue reLU, menos la última capa que tenía dos neuronas con activación softmax puesto que debía realizar una predicción multi-clase. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 400 epochs, con el optimizador Adam, y obtuvo una precisión de aproximadamente 0,88. En la gráfica siguiente se puede observar el aumento de la accuracy a lo largo de los epochs.
 
-![image](https://user-images.githubusercontent.com/94480051/175784549-5c7656d2-505f-4558-876f-bca116a089f8.png)
+![accuracy](https://user-images.githubusercontent.com/94480051/175991219-79f56b7b-9f03-4269-b8de-816255c011fe.png)
 
 A continuación se muestra también la reducción de la función de pérdida, en Binary Cross-Entropy.
 
-![image](https://user-images.githubusercontent.com/94480051/175784554-963d7636-7aa0-4f28-a845-fa334f0e0b67.png)
+![loss](https://user-images.githubusercontent.com/94480051/175991251-61b982ec-1287-46d8-b8aa-d161ff22e920.png)
 
 El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión:
 
-![image](https://user-images.githubusercontent.com/94480051/175784560-2cad1f7d-3b6a-4bbb-a90c-9683b30b5858.png)
+![confusion](https://user-images.githubusercontent.com/94480051/175991280-04e49d93-d822-41ba-a846-db3bb68a53f9.png)
 
 ### Prediciendo ilusiones
 
@@ -123,7 +123,7 @@ Una pregunta adicional que surgió creando este modelo, en línea con los objeti
 
 Sobre esos datos, que fueron un total de 501 ensayos, el modelo construido y testeado tuvo una precisión de aproximadamente 0,41. La gráfica siguiente representa la matriz de confusión para esos datos:
 
-![image](https://user-images.githubusercontent.com/94480051/175784636-64dab375-e5db-44c6-86ee-bcfad3ad2d03.png)
+![confusion illusion](https://user-images.githubusercontent.com/94480051/175991334-b54b8696-faa0-4509-85d6-6adadb01e95a.png)
 
 ### Interpretación
 
