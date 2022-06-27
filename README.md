@@ -14,7 +14,7 @@ El código del Proyecto M0ISES fue creado desde Python 3.8.8. Esta versión de P
 
 ```markdown
 
-#pip install something
+#pip install sohing
 
 ```
 
