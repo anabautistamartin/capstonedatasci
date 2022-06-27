@@ -4,8 +4,8 @@
 ## Organización del repositorio
 
 En este repositorio de GitHub se encuentran todos los ficheros empleados al llevar a cabo el Proyecto M0ISES:
-- Los datasets: [M0ISES]([M0ISES.csv](https://github.com/anabautistamartin/capstonedatasci/files/8990332/M0ISES.csv)
-) y [M0ISESILLUSION]([M0ISESILLUSION.csv](https://github.com/anabautistamartin/capstonedatasci/files/8990333/M0ISESILLUSION.csv)
+- Los datasets: [M0ISES](https://github.com/anabautistamartin/capstonedatasci/files/8990332/M0ISES.csv)
+) y [M0ISESILLUSION](https://github.com/anabautistamartin/capstonedatasci/files/8990333/M0ISESILLUSION.csv)
 )
 - Los scripts de los modelos: [Problema 1](https://github.com/anabautistamartin/capstonedatasci/blob/gh-pages/Problema%201.ipynb) y [Problema 2](https://github.com/anabautistamartin/capstonedatasci/blob/gh-pages/Problema%202.ipynb).
 - Este fichero [README.md](https://github.com/anabautistamartin/capstonedatasci/edit/gh-pages/README.md), y los ficheros [index.md](https://github.com/anabautistamartin/capstonedatasci/blob/gh-pages/index.md) y [config.yml](https://github.com/anabautistamartin/capstonedatasci/blob/gh-pages/_config.yml) para soportar la página de GitHub.
