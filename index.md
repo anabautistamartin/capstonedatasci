@@ -91,7 +91,7 @@ En psicolingüística, existen algunas medidas objetivas y electrofisiológicas 
 
 Con los datos del presente estudio, es posible configurar un modelo que clasifique las oraciones en correctas o incorrectas, atendiendo entre otras variables al tiempo de lectura. Una prueba T de Student para medidas independientes encontró que el tiempo de lectura es significativamente diferente para los ensayos donde se lee una oración correcta y los ensayos donde se lee una oración incorrecta (t=4,187, p<0,001). En la gráfica inferior se presentan las medias en tiempo de lectura para esas dos condiciones. Las variables de exposición, uso, preferencia de lectura y nivel de competencia en cada lengua pueden ayudar a perfilar los tiempos de lectura según la destreza en la lengua, así como las variables que indican el grupo y el orden de las tareas.
 
-![ms por version](https://user-images.githubusercontent.com/94480051/175992047-1ebb7f31-bc3b-44c8-a78b-6619b4188b53.png)
+![ms por version](https://user-images.githubusercontent.com/94480051/175992985-9852a22e-d8ad-4950-9a54-9177af990d33.png)
 
 Conseguir que este modelo emplee dichas medidas para clasificar en coherencia o incoherencia semántica podría significar un paso más en la búsqueda de otra medida objetiva de la congruencia semántica, esta vez incluyendo tiempos de lectura. Una herramienta como esta sería extremadamente útil apra apoyar la investigación en el procesamiento semántico en tanto que medir el tiempo de lectura es mucho más rápido y menos costoso que emplear medidas electrofisiológicas.
 
@@ -107,15 +107,15 @@ Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neur
 
 La activación de todas las capas fue reLU, menos la última capa que tenía dos neuronas con activación softmax puesto que debía realizar una predicción multi-clase. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 400 epochs, con el optimizador Adam, y obtuvo una precisión de aproximadamente 0,88. En la gráfica siguiente se puede observar el aumento de la accuracy a lo largo de los epochs.
 
-![accuracy](https://user-images.githubusercontent.com/94480051/175992112-e783d180-ac88-45d4-a6e5-41fe517792fe.png)
+![accuracy](https://user-images.githubusercontent.com/94480051/175993016-c3b5493e-d8cc-4e9e-948c-04e4421f39c9.png)
 
 A continuación se muestra también la reducción de la función de pérdida, en Binary Cross-Entropy.
 
-![loss](https://user-images.githubusercontent.com/94480051/175992159-4dc0c20f-cb65-478e-b4fe-0fdd38fe6ed4.png)
+![loss](https://user-images.githubusercontent.com/94480051/175993034-dcf400d8-f25e-4590-900a-2954dad4ebed.png)
 
 El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión:
 
-![confusion](https://user-images.githubusercontent.com/94480051/175992229-60832d98-c8fd-4d6b-a8c6-a8ea8724145d.png)
+![confusion](https://user-images.githubusercontent.com/94480051/175993070-ef2adbc3-3d53-4aaf-861e-87d1b9e555cd.png)
 
 ### Prediciendo ilusiones
 
@@ -123,7 +123,7 @@ Una pregunta adicional que surgió creando este modelo, en línea con los objeti
 
 Sobre esos datos, que fueron un total de 501 ensayos, el modelo construido y testeado tuvo una precisión de aproximadamente 0,41. La gráfica siguiente representa la matriz de confusión para esos datos:
 
-![confusion illusions](https://user-images.githubusercontent.com/94480051/175992302-09e316c0-1208-416e-933a-c5076b18b0b1.png)
+![confusion illusions](https://user-images.githubusercontent.com/94480051/175993114-62afc39a-dafa-4402-a2cf-201589363528.png)
 
 ### Interpretación
 
