@@ -16,7 +16,7 @@ Primero, se recogieron los resultados de todos los ensayos llevados a cabo en la
 - Eliminación de ensayos en los que los sujetos respondían incorrectamente.
 - Eliminación de ensayos en los que el tiempo de lectura era mayor o menor que la media en tres desviaciones típicas (MEAN±3SD).
 De esta forma, se descartaron los ensayos que no correspondían una integración semántica adecuada por parte de los sujetos. 
-Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub bajo el nombre ['dataset'](https://github.com/anabautistamartin/capstonedatasci/files/8984239/dataset.csv).
+Esto supuso la pérdida de aproximadamente un 0,10% de los ensayos iniciales, quedando una nube de datos de **7525 unidades de ensayos**. Esta base de datos está disponible en el repositorio de GitHub bajo el nombre ['M0ISES'](https://github.com/anabautistamartin/capstonedatasci/files/8990332/M0ISES.csv).
 
 Cada ensayo del experimento corresponde a cada línea de la base de datos mencionada anteriormente, e incluye las variables o columnas indicadas en la tabla de a continuación:
 
@@ -81,7 +81,7 @@ No obstante, y en línea con la motivación inicial que introducía este problem
 
 ### Objetivos
 
-El segundo problema que el Proyecto M0ISES intentó resolver fue el de crear un modelo capaz de clasificar las oraciones de cada ensayo como semánticamente 'correctas' o 'incorrectas'. 
+El segundo problema que el Proyecto M0ISES intentó resolver fue el de crear un modelo capaz de clasificar las oraciones de cada ensayo como semánticamente correctas o incorrectas. 
 
 En psicolingüística, existen algunas medidas objetivas y electrofisiológicas que sirven de indicadores de la integración semántica. Dentro de la técnica de electroencefalografía (EEG), existe el potencial evocado "N400". Este potencial es una onda negativa respecto a la línea base de medidas encefalográficas, que aparece a los 400 milisegundos de haber leído o escuchado una palabra semánticamente incongruente dentro de una oración [(Kutas y Federmeier, 2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4052444/). Esta se considera una medida objetiva de lo que el sujeto interpreta en su procesamiento, incluso se ha observado que este potencial aparece en sujetos que están aprendiendo una lengua y aún no saben responder si la oración es semánticamente congruente o no [(Ousterhout et al., 2006)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9922.2006.00361.x\). 
 
@@ -130,6 +130,7 @@ En vista de estos resultados, podemos decir que hemos alcanzado un modelo que cl
 El Proyecto M0ISES aborda dos problemas dentro del campo de la psicolingüística. Por un lado, intenta conseguir una medida rápida y eficiente del nivel de competencia en una lengua mediante una red neuronal de predicción que obtiene este valor teniendo en cuenta variables como el tiempo de lectura de una oración y otras variables sociolingüísticas. Por otro lado, trata de obtener un clasificador entrenando una red neuronal en distinguir ensayos de lectura de oraciones correctas e incorrectas, y comprueba su eficacia al clasificar los ensayos en los que los participantes producen ilusiones semánticas. 
 
 Aunque el rendimiento de los modelos para cada uno de estos dos problemas haya sido adecuado y las conclusiones estén en línea con los resultados esperados, los objetivos iniciales fueron demasiado ambiciosos como para poder resolverse de una forma tan simple. Mucha más investigación y experimentación haría falta para poder darles respuesta. Por suerte, el proceso de construcción de estos problemas ha sido lo suficientemente laborioso y motivador como para continuar explorando el nexo entre psicolingüística y aprendizaje automático. Es evidente que de estas dos disciplinas se pueden obtener los resultados más innovadores y avanzados para desvelar qué ocurre durante el procesamiento del lenguaje, por lo que es imperativo continuar progresando en esta dirección.
+
 
 
 > Este es un proyecto creado por Ana M. Bautista Martín. Para más información, [contactar](mailto:anambautistamartin@gmail.com) con la autora. 
