@@ -50,13 +50,13 @@ En los estudios en psicolingüística, es extremadamente importante conocer el n
 
 Es evidente que el tiempo de lectura está relacionado con el nivel de competencia en una lengua: a más competencia, existe un menor coste de integración que genera más agilidad al leer. En los datos que se incluyen en este proyecto, el tiempo de lectura también está ligera pero significativamente relacionado con la estimación subjetiva de los sujetos en nivel de competencia (r=-0,069; p<0,001). Adicionalmente, el nivel de competencia en una lengua tambien está relacionado significativamente con la frecuencia de exposición (r=0,144; p<0,001), la preferencia de lectura (r=0,220; p<0,001) y el uso de la lengua (r=0,270; p<0,001). En las gráficas inferiores se observa cómo, a simple vista, estas variables parecen tener poca relacion con el nivel de competencia. Sin embargo, todas estas medidas en conjunto podrían servir para conseguir predecir la variable de nivel de competencia de una forma eficaz.
 
-![prob 1 - nivel de competencia con todo](https://user-images.githubusercontent.com/94480051/175982802-ee713d6e-847d-4be1-a310-ca1b9dd4020a.png)
+![prob 1](https://user-images.githubusercontent.com/94480051/175983215-aa3b0ade-2d24-4ba4-a805-7b0d602f7d6d.png)
 
 ### Construcción del modelo
 
 De esta forma, se creó una red neuronal profunda con la intención de conseguir predecir el nivel de competencia de los sujetos en la lengua en que realizan los ensayos, con los datos indicados anteriormente. A continuación se presenta un registro de todos los intentos al crear dicha red:
 
-(imagenes registro)
+[imagenes registro]
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, había un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal. 
 
@@ -68,8 +68,7 @@ La activación de todas las capas fue reLU, menos la última capa que tenía una
 
 Este error medio obtenido es bastante positivo teniendo en cuenta la naturaleza de los datos. Siendo valores que oscilan entre 0 y 1, con un máximo de 3 cifras decimales, obtener un error medio aproximado de 0,0008 es aceptable. El ajuste del modelo a los valores reales se puede observar en la siguiente gráfica:
 
-<p align="center">
-![image](https://user-images.githubusercontent.com/94480051/175782412-0fb3ffb4-279d-46c5-8ca1-9350936d76f6.png)</p>
+[image]
 
 Es importante remarcar que en otros intentos a la hora de crear el modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tanto a los datos. El error cuadrático medio que alcanzó fue de 0,005223, mucho mayor que el que se consigue incluyendo las variables. En las siguientes gráficas se observa su reducción en error cuadrático medio y el ajuste a los datos.
 
