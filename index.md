@@ -61,7 +61,11 @@ De esta forma, se creó una red neuronal profunda con la intención de conseguir
 
 (imagenes registro)
 
-Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, había un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
+Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, había un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal. 
+
+![representacion modelo 1](https://user-images.githubusercontent.com/94480051/175924709-0d5154c5-4001-4d7e-b5c9-cd7c19031c52.png)
+
+La activación de todas las capas fue reLU, menos la última capa que tenía una neurona con activación lineal puesto que debía predecir un valor continuo. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 200 epochs, con el optimizador Adam, y obtuvo un error cuadrático medio de aproximadamente 0,000781. En la gráfica siguiente se puede observar la reducción de dicho error a lo largo de los epochs:
 
 ![image](https://user-images.githubusercontent.com/94480051/175782399-2d1fbd81-c4ec-409d-ba06-7ddacc70c61c.png)
 
@@ -100,7 +104,11 @@ Para tratar de alcanzar dichos objetivos, se construyó una red neuronal profund
 
 imagenes intentos
 
-Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neuronas densamente conectadas, divididas en 14 capas. Cada dos capas, se introdujo un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. La activación de todas las capas fue reLU, menos la última capa que tenía dos neuronas con activación softmax puesto que debía realizar una predicción multi-clase. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 400 epochs, con el optimizador Adam, y obtuvo una precisión de aproximadamente 0,88. En la gráfica siguiente se puede observar el aumento de la accuracy a lo largo de los epochs.
+Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neuronas densamente conectadas, divididas en 14 capas. Cada dos capas, se introdujo un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal.
+
+![representacion modelo 2](https://user-images.githubusercontent.com/94480051/175924823-89f7444e-ed89-4df6-a922-ae0192c10e9b.png)
+
+La activación de todas las capas fue reLU, menos la última capa que tenía dos neuronas con activación softmax puesto que debía realizar una predicción multi-clase. Este modelo se entrenó con un tamaño de batch de 40 ejemplos, en 400 epochs, con el optimizador Adam, y obtuvo una precisión de aproximadamente 0,88. En la gráfica siguiente se puede observar el aumento de la accuracy a lo largo de los epochs.
 
 ![image](https://user-images.githubusercontent.com/94480051/175784549-5c7656d2-505f-4558-876f-bca116a089f8.png)
 
