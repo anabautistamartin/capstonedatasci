@@ -10,7 +10,12 @@ En este repositorio de GitHub se encuentran todos los ficheros empleados al llev
 
 ## Requerimientos
 
-El código del Proyecto M0ISES fue creado desde Python 3.8.8. Se necesita esta versión de Python (o posteriores) para ejecutar el código que se incluye en este repositorio. 
+El código del Proyecto M0ISES fue creado desde Python 3.8.8. Se necesita esta versión de Python (o posteriores) para ejecutar el código que se incluye en este repositorio. Se puede crear y activar un entorno apropiado para ejecutar el código con:
+
+```
+conda env create -f environment.yaml python=3.8
+conda activate contextmoses
+```
 
 ## Datos
 
