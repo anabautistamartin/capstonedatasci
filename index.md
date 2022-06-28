@@ -56,10 +56,10 @@ Es evidente que la velocidad de lectura está relacionada con el nivel de compet
 
 De acuerdo con los propósitos descritos anteriormente, se creó una red neuronal profunda con la intención de conseguir predecir el nivel de competencia de los sujetos en la lengua en que realizan los ensayos. Las variables de entrada incluyeron las variables de ítem, versión del ítem, milisegundos de lectura, lengua, frecuencia de exposición, preferencia de lectura, uso de la lengua, grupo, orden y condición experimental. A continuación se presenta un registro de todos los intentos al crear dicha red:
 
-![1](https://user-images.githubusercontent.com/94480051/176224875-61e00d71-cbf3-4ac5-b025-d2428bdf2835.png)
-![2](https://user-images.githubusercontent.com/94480051/176224886-8ff11d2e-f591-49b9-bc71-1056a5965abd.png)
-![3](https://user-images.githubusercontent.com/94480051/176224906-3e9a8b29-bae9-4942-9b71-1c4480b0174d.png)
-![4](https://user-images.githubusercontent.com/94480051/176224911-a8a99f3c-78af-4dc1-b837-da1debf3cca7.png)
+![ML Project Diary-08](https://user-images.githubusercontent.com/94480051/176225507-d5dcf2e6-af35-478c-bb28-20d38b049578.jpg)
+![ML Project Diary-09](https://user-images.githubusercontent.com/94480051/176225519-a31daa12-aa10-457f-a2ba-370fef095afa.jpg)
+![ML Project Diary-10](https://user-images.githubusercontent.com/94480051/176225525-73fb3237-15a6-435c-af59-3dccb1ecb06d.jpg)
+![ML Project Diary-11](https://user-images.githubusercontent.com/94480051/176225532-707ef55a-ce4e-4d6f-b485-29767c0d4d92.jpg)
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, se añadió un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal. 
 
@@ -105,11 +105,11 @@ Conseguir que este modelo emplee dichas medidas para clasificar en coherencia o 
 
 Para tratar de alcanzar dichos objetivos, se construyó una red neuronal profunda con la intención de que clasificase los ensayos según la versión en que se presentaba la oración. A continuación se muestra un registro de todos los intentos al crear dicho modelo:
 
-![1](https://user-images.githubusercontent.com/94480051/176224983-baa37db2-5839-45b0-9159-a638a280dae7.png)
-![2](https://user-images.githubusercontent.com/94480051/176224997-c6050100-4895-430a-8b4f-d7f97f0f6bb7.png)
-![3](https://user-images.githubusercontent.com/94480051/176225009-9597d4f7-97e2-4067-bb18-8d23db3af228.png)
-![4](https://user-images.githubusercontent.com/94480051/176225021-c25511f1-8997-4593-9083-6a60feda36ce.png)
-![5](https://user-images.githubusercontent.com/94480051/176225031-41f4b718-513a-47fa-b5e8-14c744aefd13.png)
+![ML Project Diary-02](https://user-images.githubusercontent.com/94480051/176225573-b47db873-17d6-4d0b-a4ae-9980d7ffc213.jpg)
+![ML Project Diary-03](https://user-images.githubusercontent.com/94480051/176225584-4e910717-6754-4604-b1e0-d51a750167c8.jpg)
+![ML Project Diary-04](https://user-images.githubusercontent.com/94480051/176225612-89286a9d-5054-4846-9960-9552b2cd2ba9.jpg)
+![ML Project Diary-05](https://user-images.githubusercontent.com/94480051/176225619-5795cb3a-3db4-422c-8df8-4bf7adb6da65.jpg)
+![ML Project Diary-06](https://user-images.githubusercontent.com/94480051/176225639-0ea0a613-f9e3-4b71-8229-a1f3b50be3fd.jpg)
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neuronas densamente conectadas, divididas en 14 capas. Cada dos capas, se introdujo adicionalmente un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal.
 
