@@ -73,7 +73,7 @@ El error cuadrático medio obtenido es bastante positivo teniendo en cuenta la n
 
 ![fitting selected](https://user-images.githubusercontent.com/94480051/175987550-ebb63093-47df-4a08-934b-ec166157ca07.png)
 
-Es importante mencionar que en otro intento a la hora de implementar este modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin introducir las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tan adecuadamente a los datos. El error cuadrático medio que alcanzó fue de 0,0052, mucho mayor que el que se consigue incluyendo dichas variables. En las siguientes gráficas se observa la reducción del modelo en error cuadrático medio y el ajuste a los datos, habiéndolo entrenado sin las variables mencionadas. 
+Es importante mencionar que en otro intento a la hora de implementar este modelo, el mismo modelo construido bajo las mismas condiciones de entrenamiento, pero sin introducir las variables de exposición, uso y preferencia de lectura en la lengua del ensayo, no consiguió ajustarse tan adecuadamente a los datos. El error cuadrático medio que alcanzó fue de aproximadamente 0,0052, mucho mayor que el que se consigue incluyendo dichas variables. En las siguientes gráficas se observa la reducción del modelo en error cuadrático medio y el ajuste a los datos, habiéndolo entrenado sin las variables mencionadas. 
 
 ![reduction in mse unselected](https://user-images.githubusercontent.com/94480051/175987583-59d1283e-bc8a-4909-9bcb-bd5528ed4fec.png)
 ![fitting unselected](https://user-images.githubusercontent.com/94480051/175987608-8f353d64-9e90-41b7-ae47-b57680a3b1c5.png)
@@ -126,6 +126,8 @@ El ajuste del modelo a los valores reales se puede observar en la siguiente matr
 
 ![confusion](https://user-images.githubusercontent.com/94480051/175993070-ef2adbc3-3d53-4aaf-861e-87d1b9e555cd.png)
 
+Se aprecia que hay notablemente más casos en los que el modelo clasifica correctamente que incorrectamente. Además, el hecho de que existan ligeramente más casos de clasificaciones acertadas como oraciones correctas que incorrectas puede estar relacionado con la proporción de ensayos en el dataset con ítems en su versión correcta. 
+
 ### Prediciendo ilusiones
 
 Una pregunta adicional que surgió creando este modelo, en línea con los objetivos iniciales, fue ver qué clasificación haría el modelo sobre aquellos ensayos en los que había habido ilusiones semánticas. Esos ensayos fueron eliminados inicialmente del dataset durante la limpieza, puesto que eran oraciones a las que los sujetos no habían respondido correctamente: que se de la ilusión semántica significa detectar una oración incorrecta como correcta. 
@@ -136,11 +138,13 @@ Sobre esos datos, que fueron un total de 501 ensayos, el modelo desarrollado pre
 
 ![confusion illusions](https://user-images.githubusercontent.com/94480051/175993114-62afc39a-dafa-4402-a2cf-201589363528.png)
 
+El modelo clasifica más ensayos como si la versión de la oración fuese correcta, en vez de incorrecta. 
+
 ### Interpretación
 
 Para conseguir obtener un clasificador de ensayos en función de la congruencia o incongruencia semántica, se construyó un modelo que alcanzó una precisión del 0,88. Esta capacidad de clasificación es bastante alta, más que la precisión que se obtendría de una clasificación al azar. Esto indica que la red neuronal elaborada puede clasificar la versión del ítem (correcta o incorrecta), con los datos de entrada de número de ítem, tiempo de lectura del ítem, grupo y orden experimental, y otras variables sobre la competencia y experiencia que se tiene con la lengua en que se presenta la oración.
 
-Adicionalmente, este modelo fue implementado para intentar clasificar aquellos ensayos en los que los sujetos presentan ilusiones semánticas, esto es, ensayos en los que confundían oraciones incorrectas como correctas. De acuerdo con las asunciones iniciales, este modelo obtuvo una precisión de 0,41, menor que la que se esperaría por azar. Esto indica que la clasificación que el modelo realiza no se establece sobre la congruencia semántica real, sino sobre la que los participantes elaboran durante su procesamiento. En consecuencia, estos resultados van en línea con que el modelo sirva de medida de la congruencia semántica durante el procesamiento, favoreciendo los objetivos principales. 
+Adicionalmente, este modelo fue implementado para intentar clasificar aquellos ensayos en los que los sujetos presentan ilusiones semánticas, esto es, ensayos en los que confundían oraciones incorrectas como correctas. De acuerdo con las asunciones iniciales, este modelo obtuvo una precisión de 0,41, menor que la que se esperaría por azar. Esto indica que la clasificación que el modelo realiza no se establece sobre la congruencia semántica real, sino que parece estar más relacionado con la congruencia que los participantes elaboran durante su procesamiento. En consecuencia, estos resultados van en línea con que el modelo sirva de medida de la congruencia semántica durante el procesamiento, favoreciendo los objetivos principales. 
 
 Sin embargo, y con el mismo argumento que la reflexión sobre el primer problema, para que este modelo funcionase mejor, debería entrenarse con una base de datos con más ensayos y con casos de integración semántica más variados. Los resultados son positivos e indican que un modelo en esta línea podría cumplir con los objetivos descritos anteriormente, convirtiéndose en una medida más eficiente de la integración semántica que realizan los individuos en su procesamiento. Aunque dados los resultados obtenidos se puede deducir que este modelo está en buena dirección, es necesario elaborar más este dominio para conseguir unas predicciones más precisas y generalizables. 
 
