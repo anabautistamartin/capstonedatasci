@@ -56,7 +56,10 @@ Es evidente que la velocidad de lectura está relacionada con el nivel de compet
 
 De acuerdo con los propósitos descritos anteriormente, se creó una red neuronal profunda con la intención de conseguir predecir el nivel de competencia de los sujetos en la lengua en que realizan los ensayos. Las variables de entrada incluyeron las variables de ítem, versión del ítem, milisegundos de lectura, lengua, frecuencia de exposición, preferencia de lectura, uso de la lengua, grupo, orden y condición experimental. A continuación se presenta un registro de todos los intentos al crear dicha red:
 
-[imagenes registro]
+![1](https://user-images.githubusercontent.com/94480051/176224875-61e00d71-cbf3-4ac5-b025-d2428bdf2835.png)
+![2](https://user-images.githubusercontent.com/94480051/176224886-8ff11d2e-f591-49b9-bc71-1056a5965abd.png)
+![3](https://user-images.githubusercontent.com/94480051/176224906-3e9a8b29-bae9-4942-9b71-1c4480b0174d.png)
+![4](https://user-images.githubusercontent.com/94480051/176224911-a8a99f3c-78af-4dc1-b837-da1debf3cca7.png)
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, se añadió un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal. 
 
@@ -102,7 +105,11 @@ Conseguir que este modelo emplee dichas medidas para clasificar en coherencia o 
 
 Para tratar de alcanzar dichos objetivos, se construyó una red neuronal profunda con la intención de que clasificase los ensayos según la versión en que se presentaba la oración. A continuación se muestra un registro de todos los intentos al crear dicho modelo:
 
-[imagenes registro]
+![1](https://user-images.githubusercontent.com/94480051/176224983-baa37db2-5839-45b0-9159-a638a280dae7.png)
+![2](https://user-images.githubusercontent.com/94480051/176224997-c6050100-4895-430a-8b4f-d7f97f0f6bb7.png)
+![3](https://user-images.githubusercontent.com/94480051/176225009-9597d4f7-97e2-4067-bb18-8d23db3af228.png)
+![4](https://user-images.githubusercontent.com/94480051/176225021-c25511f1-8997-4593-9083-6a60feda36ce.png)
+![5](https://user-images.githubusercontent.com/94480051/176225031-41f4b718-513a-47fa-b5e8-14c744aefd13.png)
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1450 neuronas densamente conectadas, divididas en 14 capas. Cada dos capas, se introdujo adicionalmente un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal.
 
