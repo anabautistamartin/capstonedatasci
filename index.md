@@ -122,7 +122,7 @@ A continuación se muestra también la reducción de la función de pérdida, en
 
 ![loss](https://user-images.githubusercontent.com/94480051/175993034-dcf400d8-f25e-4590-900a-2954dad4ebed.png)
 
-El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión:
+El ajuste del modelo a los valores reales se puede observar en la siguiente matriz de confusión.
 
 ![confusion](https://user-images.githubusercontent.com/94480051/175993070-ef2adbc3-3d53-4aaf-861e-87d1b9e555cd.png)
 
@@ -134,7 +134,7 @@ Una pregunta adicional que surgió creando este modelo, en línea con los objeti
 
 El modelo hasta ahora desarrollado había demostrado clasificar adecuadamente los ensayos según la versión en que se presentaban los ítems. Sin embargo, todos los ensayos corresponden a sujetos que han respondido de forma correcta a las oraciones, es decir, las han procesado correctamente en términos semánticos. Si el modelo entrenado es útil para predecir la integración semántica, debería clasificar los ensayos en los que se da la ilusión semántica como si la versión de la oración fuese correcta, puesto que es así como los participantes han procesado la oración. En otras palabras, el modelo debería fallar sistemáticamente al clasificar estos ensayos.
 
-Sobre esos datos, que fueron un total de 501 ensayos, el modelo desarrollado previamente obtuvo una precisión de aproximadamente 0,41. La gráfica siguiente representa la matriz de confusión para esos datos:
+Sobre esos datos, que fueron un total de 501 ensayos, el modelo desarrollado previamente obtuvo una precisión de aproximadamente 0,41. La gráfica siguiente representa la matriz de confusión para esos datos.
 
 ![confusion illusions](https://user-images.githubusercontent.com/94480051/175993114-62afc39a-dafa-4402-a2cf-201589363528.png)
 
