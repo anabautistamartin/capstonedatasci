@@ -59,7 +59,7 @@ De acuerdo con los propósitos descritos anteriormente, se creó una red neurona
 ![ML Project Diary-08](https://user-images.githubusercontent.com/94480051/176225507-d5dcf2e6-af35-478c-bb28-20d38b049578.jpg)
 ![ML Project Diary-09](https://user-images.githubusercontent.com/94480051/176225519-a31daa12-aa10-457f-a2ba-370fef095afa.jpg)
 ![ML Project Diary-10](https://user-images.githubusercontent.com/94480051/176225525-73fb3237-15a6-435c-af59-3dccb1ecb06d.jpg)
-![ML Project Diary-11](https://user-images.githubusercontent.com/94480051/176225532-707ef55a-ce4e-4d6f-b485-29767c0d4d92.jpg)
+![image](https://user-images.githubusercontent.com/94480051/176226030-50939457-4f5b-4f49-a28d-78bc8c3008c9.png)
 
 Finalmente, el modelo elegido fue un modelo secuencial con un total de 1723 neuronas densamente conectadas, divididas en 16 capas. Cada dos capas, se añadió un dropout del 20% de neuronas para reducir el riesgo de overfitting del modelo. En la ilustración siguiente se representa dicho modelo neuronal. 
 
